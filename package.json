@@ -1,0 +1,27 @@
+{
+  "name": "angela",
+  "version": "1.0.0",
+  "description": "Command-line interface tool to test Web applications from the command-line. The tool runs suites of tests written with Jasmine in some Web browser (Chrome, Firefox, Safari, PhantomJS, Android) using WebDriver.",
+  "author": "Joshfire",
+  "contributors": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joshfire/angela.git"
+  },
+  "bin": {
+    "angela": "./lib/runner.js"
+  },
+  "keywords": [],
+  "license": "",
+  "engines": {
+    "node": "0.10"
+  },
+  "dependencies": {
+    "selenium-webdriver": "~2.37.0",
+    "phantomjs": "~1.9.2-2",
+    "optimist": "~0.6.0",
+    "walk": "~2.2.1",
+    "woodman": "~0.8.0"
+  },
+  "devDependencies": {}
+}
