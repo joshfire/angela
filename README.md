@@ -61,6 +61,8 @@ Options:
                                                                 [default: false]
   --keep, -k     Whether to keep the browser open when tests are over
                                                                 [default: false]
+  --junit        Create JUnit XML reports (in "junitreports" folder)
+                                                                [default: false]
   --help, -h     Displays usage help                                            
 ```
 
@@ -114,6 +116,11 @@ angela spec/test.spec.js
 ```
 
 Each test must complete within 30 seconds (or 2 minutes if tests are run on an Android device). That setting may be exposed in a future version of the tool if that seems useful.
+
+
+## Integration with continuous integration servers
+
+The `--junit` option generates JUnit XML reports in the `junitreports` folder. This lets you integrate Angela pretty easily with continuous integration servers such as [Jenkins](http://jenkins-ci.org/).
 
 
 ## Cleanup
