@@ -42,7 +42,7 @@ Usage: /Users/fd/bin/angela [path]
 
 Parameters:
   path           Spec file or folder that contains the spec files.
-                 Spec file names must end with ".spec.js".
+                 Spec file names must end with ".spec.js" or "Spec.js".
                  The tool will recurse through subfolders to list spec files.
                  If no path is given, the tool will search for spec files in
                  current working directory.
@@ -71,7 +71,7 @@ Options:
 
 ## Execution
 
-When run without parameter or option, Angela lists all files that end with `.spec.js` in the current working directory (and its subdirectories), starts a PhantomJS server in the background that exposes a WebDriver endpoint on port `8195` and runs the spec files it found against PhantomJS. It reports the results to the console.
+When run without parameter or option, Angela lists all files that end with `.spec.js` or `Spec.js` in the current working directory (and its subdirectories), starts a PhantomJS server in the background that exposes a WebDriver endpoint on port `8195` and runs the spec files it found against PhantomJS. It reports the results to the console.
 
 Spec files are run one after the other using the same browser session unless you set the `--sessionperspec` flag (but note that this slows down execution a lot).
 
