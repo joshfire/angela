@@ -38,7 +38,7 @@ Angela - Copyright (c) 2013 Joshfire. All rights reserved.
 CLI tool to run Jasmine test suites against a Web application that runs in a
 Web browser controlled with WebDriver.
 
-Usage: angela [path]
+Usage: /Users/fd/bin/angela [path]
 
 Parameters:
   path           Spec file or folder that contains the spec files.
@@ -48,29 +48,32 @@ Parameters:
                  current working directory.
 
 Options:
-  --browser, -b  Webdriver browser endpoint. The code automatically starts the
-                 "right" Webdriver server based on that setting. Possible
-                 values include "phantomjs", "chrome", "firefox", "safari", or
-                 "android" (provided browser or device is available on your
-                 machine).                                [default: "phantomjs"]
-  --host         Webdriver server host                    [default: "localhost"]
-  --port         Webdriver server port                           [default: 8195]
-  --serverlog    Log Webdriver server execution to provided log file
+  --browser, -b     Webdriver browser endpoint. The code automatically starts
+                    the "right" Webdriver server based on that setting.
+                    Possible values include "phantomjs", "chrome", "firefox",
+                    "safari", or "android" (provided browser or device is
+                    available on your machine).           [default: "phantomjs"]
+  --host            Webdriver server host                 [default: "localhost"]
+  --port            Webdriver server port                        [default: 8195]
+  --serverlog       Log Webdriver server execution to provided log file
                                                                    [default: ""]
-  --useserver    Whether to use running Webdriver server or to start one
+  --useserver       Whether to use running Webdriver server or to start one
                                                                 [default: false]
-  --keep, -k     Whether to keep the browser open when tests are over
+  --sessionperspec  Angela uses the same browser session throughout by default.
+                    Set the flag to use one browser session per spec. Specs
+                    will run considerably slower.               [default: false]
+  --keep, -k        Whether to keep the browser open when tests are over
                                                                 [default: false]
-  --junit        Create JUnit XML reports (in "junitreports" folder)
+  --junit           Create JUnit XML reports (in "junitreports" folder)
                                                                 [default: false]
-  --help, -h     Displays usage help                                            
+  --help, -h        Displays usage help
 ```
 
 ## Execution
 
 When run without parameter or option, Angela lists all files that end with `.spec.js` in the current working directory (and its subdirectories), starts a PhantomJS server in the background that exposes a WebDriver endpoint on port `8195` and runs the spec files it found against PhantomJS. It reports the results to the console.
 
-Spec files are run one after the other using the same browser session.
+Spec files are run one after the other using the same browser session unless you set the `--sessionperspec` flag (but note that this slows down execution a lot).
 
 Set the `path` parameter to the spec file to run or to the folder that contains the spec files to run to override default behavior.
 
