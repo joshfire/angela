@@ -50,7 +50,7 @@ Then ask Angela to run the test:
 angela sweet.spec.js
 ```
 
-You should see something like:
+After a couple of seconds, you should see something like:
 
 ```bash
 Running 1 spec tests...
@@ -94,6 +94,7 @@ Options:
                     available on your machine).           [default: "phantomjs"]
   --host            Webdriver server host                 [default: "localhost"]
   --port            Webdriver server port                        [default: 8195]
+  --verbose, -v     Trace Angela's execution to the console     [default: false]
   --serverlog       Log Webdriver server execution to provided log file
                                                                    [default: ""]
   --useserver       Whether to use running Webdriver server or to start one
