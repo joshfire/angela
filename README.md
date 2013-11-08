@@ -12,11 +12,11 @@ Angela's main goal is to set things up so that you can focus on actually writing
 To install Angela globally:
 
 ```bash
-npm install -g git://github.com/joshfire/angela.git
+npm install -g git+ssh://git@github.com:joshfire/angela.git
 angela --help
 ```
 
-If you prefer to clone the source code to your machine:
+This may take a couple of minutes as Angela includes a few binary files (~50Mb). If you prefer to clone the source code to your machine:
 
 ```
 git clone git@github.com:joshfire/angela.git
