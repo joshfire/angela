@@ -1,10 +1,10 @@
 # Angela
 
-Angela is a small Node.js CLI tool designed to help test Web applications directly from the command-line. The tool runs suites of tests written with Jasmine in a Web browser (Chrome, Firefox, Safari, PhantomJS, Android).
+Angela is a Node.js CLI tool that runs suites of tests written with Jasmine against Web applications in a Web browser.
 
-The code of Angela is pretty basic as its main goal is to set things up for tests to run without having to download and install parts from different origins. It wraps [Jasmine](http://jasmine.github.io/2.0/introduction.html), [Selenium's WebDriverJS](https://code.google.com/p/selenium/wiki/WebDriverJs) to control Web browsers, [PhantomJS](http://phantomjs.org/) for headless execution, and exposes a simple interface to run spec tests and set a few parameters.
+It wraps [Jasmine](http://jasmine.github.io/2.0/introduction.html), [Selenium's WebDriverJS](https://code.google.com/p/selenium/wiki/WebDriverJs) to control Web browsers, [PhantomJS](http://phantomjs.org/) for headless execution, and exposes a simple interface to run spec tests and set a few parameters.
 
-Internally, Angela launches the right WebDriver server for the targeted Web browser.
+Angela's main goal is to set things up so that you can focus on actually writing tests and not lose time installing libraries and running servers. Tests are run in PhantomJS by default but you may run them in Chrome, Firefox, Opera, Safari or Android thanks to the `--browser` option (some may not work on your platform). The tool launches the right WebDriver server for the targeted Web browser before running the tests.
 
 
 ## Installation
@@ -26,6 +26,45 @@ npm install
 
 The `angela` program is an alias to the `lib/runner.js` script in the source code. If you are looking at the source code of the tool and wondering how to run it, just type: `node lib/runner.js --help`.
 
+
+## An example
+
+Install Angela and create a file named `sweet.spec.js` that contains:
+
+```javascript
+describe('Angela', function () {
+  it('is very sweet', function (done) {
+    driver.get('http://www.urbandictionary.com/define.php?term=Angela');
+    driver.getElement
+    driver.getTitle().then(function (title) {
+      expect(title).toEqual('Urban Dictionary: Angela');
+      done();
+    });
+  });
+});
+```
+
+Then ask Angela to run the test:
+
+```bash
+angela sweet.spec.js
+```
+
+You should see something like:
+
+```bash
+Running 1 spec tests...
+
+Progress
+--------
+Angela is very sweet... passed
+
+
+Summary
+-------
+1 spec run in 1 second.
+no failure.
+```
 
 
 ## Usage
