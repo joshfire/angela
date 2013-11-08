@@ -150,7 +150,7 @@ describe('The home page of Joshfire.com', function () {
 
 Please note that Angela ships [version 2.0.0rc5 of Jasmine](http://jasmine.github.io/2.0/introduction.html), which introduces the `done` function in particular to ease authoring of asynchronous tests as well as the possibility to mark tests as `pending`.
 
-The `driver` instance is the one exposed by the [Selenium's WebDriverJS](https://code.google.com/p/selenium/wiki/WebDriverJs) library. Check its documentation for usage. Note the use of *promises* in particular.
+The `driver` instance is the one exposed by the [Selenium's WebDriverJS](https://code.google.com/p/selenium/wiki/WebDriverJs) library. Check its documentation for usage. Note the use of *promises* in particular. The closest thing to a useful documentation of methods you can use is probably [Selenium's Javadoc](http://selenium.googlecode.com/git/docs/api/java/org/openqa/selenium/package-summary.html), starting from the [WebDriver class](http://selenium.googlecode.com/git/docs/api/java/org/openqa/selenium/WebDriver.html#method_summary). Next in line is the [WebDriver W3C Working Draft](http://www.w3.org/TR/webdriver/).
 
 To run that example from the root folder of Angela:
 
