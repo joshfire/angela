@@ -2,7 +2,9 @@
 
 Angela is a Node.js CLI tool that runs suites of tests written with Jasmine against Web applications in a Web browser.
 
-It wraps [Jasmine](http://jasmine.github.io/2.0/introduction.html), [Selenium's WebDriverJS](https://code.google.com/p/selenium/wiki/WebDriverJs) to control Web browsers, [PhantomJS](http://phantomjs.org/) for headless execution, and exposes a simple interface to run spec tests and set a few parameters.
+Angela is useful for [black-box testing](http://en.wikipedia.org/wiki/Black_box_testing) purposes, in other words to test a Web application from an end user perspective without looking into the internals of the code.
+
+Angela wraps [Jasmine](http://jasmine.github.io/2.0/introduction.html), [Selenium's WebDriverJS](https://code.google.com/p/selenium/wiki/WebDriverJs) to control Web browsers, [PhantomJS](http://phantomjs.org/) for headless execution, and exposes a simple interface to run spec tests and set a few parameters.
 
 Angela's main goal is to set things up so that you can focus on actually writing tests and not lose time installing libraries and running servers. Tests are run in PhantomJS by default but you may run them in Chrome, Firefox, Opera, Safari or Android thanks to the `--browser` option (some may not work on your platform). The tool launches the right WebDriver server for the targeted Web browser before running the tests.
 
