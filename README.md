@@ -1,24 +1,39 @@
 # Angela
 
-Angela is a Node.js CLI tool that runs suites of tests written with Jasmine against Web applications in a Web browser.
+Angela is a Node.js test runner for [acceptance tests](http://en.wikipedia.org/wiki/Acceptance_testing) written with the [Jasmine](http://jasmine.github.io/2.0/introduction.html) JavaScript testing framework and [Selenium's WebDriverJS](https://code.google.com/p/selenium/wiki/WebDriverJs) implementation of the [WebDriver API](http://www.w3.org/TR/webdriver/). In other words, Angela helps test a Web application from an end user perspective with scenarios such as:
 
-Angela is useful for [black-box testing](http://en.wikipedia.org/wiki/Black_box_testing) purposes, in other words to test a Web application from an end user perspective without looking into the internals of the code.
+```javascript
+describe('Angela', function () {
+  it('is very sweet', function (done) {
+    driver.get('http://www.urbandictionary.com/define.php?term=Angela');
+    driver.getTitle().then(function (title) {
+      expect(title).toEqual('Urban Dictionary: Angela');
+      done();
+    });
+  });
+});
+```
 
-Angela wraps [Jasmine](http://jasmine.github.io/2.0/introduction.html), [Selenium's WebDriverJS](https://code.google.com/p/selenium/wiki/WebDriverJs) to control Web browsers, [PhantomJS](http://phantomjs.org/) for headless execution, and exposes a simple interface to run spec tests and set a few parameters.
+Tests are run in [PhantomJS](http://phantomjs.org/) by default but can equally run in Chrome, Firefox, Opera, Safari or Android thanks to the `--browser` option (some of them are platform-dependent).
 
-Angela's main goal is to set things up so that you can focus on actually writing tests and not lose time installing libraries and running servers. Tests are run in PhantomJS by default but you may run them in Chrome, Firefox, Opera, Safari or Android thanks to the `--browser` option (some may not work on your platform). The tool launches the right WebDriver server for the targeted Web browser before running the tests.
+Angela sets things up so that you can focus on actually writing tests and not lose time figuring out the libraries to install and the servers to run:
+
+- it starts the right WebDriver server for the targeted Web browser
+- it creates the Webdriver session, one for all tests by default or one per suite of tests if so requested
+- it exposes the WebDriver instance in test files
+- it reports WebDriver errors as test failures
 
 
 ## Installation
 
-To install Angela globally:
+To install Angela globally with npm:
 
 ```bash
 npm install -g git+ssh://git@github.com:joshfire/angela.git
 angela --help
 ```
 
-This may take a couple of minutes as Angela includes a few binary files (~50Mb). If you prefer to clone the source code to your machine:
+This may take a couple of minutes as Angela includes a few binary files (~50Mb). If you prefer, you can clone the source code to your machine:
 
 ```
 git clone git@github.com:joshfire/angela.git
@@ -29,7 +44,7 @@ npm install
 The `angela` program is an alias to the `lib/runner.js` script in the source code. If you are looking at the source code of the tool and wondering how to run it, just type: `node lib/runner.js --help`.
 
 
-## An example
+## Getting started
 
 Install Angela and create a file named `sweet.spec.js` that contains:
 
@@ -37,7 +52,6 @@ Install Angela and create a file named `sweet.spec.js` that contains:
 describe('Angela', function () {
   it('is very sweet', function (done) {
     driver.get('http://www.urbandictionary.com/define.php?term=Angela');
-    driver.getElement
     driver.getTitle().then(function (title) {
       expect(title).toEqual('Urban Dictionary: Angela');
       done();
