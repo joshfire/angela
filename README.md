@@ -108,6 +108,12 @@ Options:
                     Possible values include "phantomjs", "chrome", "firefox",
                     "safari", or "android" (provided browser or device is
                     available on your machine).           [default: "phantomjs"]
+  --before          JS file to "require" before tests are run. Use this option
+                    to add custom matchers or expose additional variables to
+                    the global scope as needed. Code must be synchronous.
+  --after           JS file to "require" after tests have run. Use this option
+                    to run custom code when execution is over. Code must be
+                    synchronous.
   --host            Webdriver server host                 [default: "localhost"]
   --port            Webdriver server port                        [default: 8195]
   --verbose, -v     Trace Angela's execution to the console     [default: false]
@@ -175,6 +181,40 @@ angela spec/test.spec.js
 ```
 
 Each test must complete within 30 seconds (or 2 minutes if tests are run on an Android device). That setting may be exposed in a future version of the tool if that seems useful.
+
+
+### Custom matchers
+
+If you want to define custom matchers shared by all your test suites, use the `--before` option to target a JS file that defines the matchers with code such as:
+
+```javascript
+beforeEach(function () {
+  addMatchers({
+    toBeSweet: function () {
+      return {
+        compare: function (actual) {
+          var result = { pass: false };
+          result.pass = (actual === 'sweet');
+          return result;
+        }
+      };
+    }
+  });
+});
+```
+
+(For those used to previous versions of Jasmine, note that the interface to describe matchers has changed in version 2)
+
+The `spec` folder contains an example that may be run with:
+
+```bash
+angela spec/sweet.spec.js --before spec/matchers.js
+```
+
+
+### Unit tests
+
+While Angela is designed to run acceptance tests, note you can also use it to run **unit tests** written with Jasmine. It just seems a bit overkill to use Angela if you **only** have unit tests as the instance of PhantomJS that the tool runs in the background is simply useless for unit tests.
 
 
 ## Integration with continuous integration servers
