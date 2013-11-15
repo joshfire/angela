@@ -177,7 +177,7 @@ The `driver` instance is the one exposed by the [Selenium's WebDriverJS](https:/
 To run that example from the root folder of Angela:
 
 ```bash
-angela spec/test.spec.js
+angela examples/test.spec.js
 ```
 
 Each test must complete within 30 seconds (or 2 minutes if tests are run on an Android device). That setting may be exposed in a future version of the tool if that seems useful.
@@ -205,10 +205,10 @@ beforeEach(function () {
 
 (For those used to previous versions of Jasmine, note that the interface to describe matchers has changed in version 2)
 
-The `spec` folder contains an example that may be run with:
+The `examples` folder contains an example that may be run with:
 
 ```bash
-angela spec/sweet.spec.js --before spec/matchers.js
+angela examples/sweet.spec.js --before examples/matchers.js
 ```
 
 

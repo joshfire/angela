@@ -1,4 +1,11 @@
-/*global describe, it, expect, driver*/
+/**
+ * @fileOverview Shows how exceptions that get thrown within Jasmine or within
+ * a WebDriver command are caught and converted to test failures.
+ *
+ * Run example with:
+ *   angela spec/errors.spec.js
+ */
+/* global describe, it, driver */
 describe('An exception', function () {
   it('is caught', function (done) {
     throw new Error('oh no!');

@@ -1,4 +1,10 @@
-/*global describe, it, expect, driver*/
+/**
+ * @fileOverview An example of nested "describe".
+ *
+ * Run the example with:
+ *   angela spec/nested.spec.js
+ */
+/* global describe, it, expect, driver */
 describe('Home page', function () {
   it('has the right title "Joshfire"', function (done) {
     driver.get('http://joshfire.com');
