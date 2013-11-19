@@ -135,7 +135,7 @@ Options:
 
 When run without parameter or option, Angela lists all files that end with `.spec.js` or `Spec.js` in the current working directory (and its subdirectories), starts a PhantomJS server in the background that exposes a WebDriver endpoint on port `8195` and runs the spec files it found against PhantomJS. It reports the results to the console.
 
-Spec files are run one after the other using the same browser session unless you set the `--sessionperspec` flag (but note that this slows down execution a lot).
+Spec files are run one after the other using the same browser session unless you set the `--sessionperspec` flag (this does slow down execution quite a bit, though).
 
 Set the `path` parameter to the spec file to run or to the folder that contains the spec files to run to override default behavior.
 
@@ -161,26 +161,27 @@ Test files are regular Jasmine spec files. On top of the usual Jasmine functions
 /*global describe, it, expect, driver*/
 describe('The home page of Joshfire.com', function () {
   it('has the right title "Joshfire"', function (done) {
-    driver.get('http://joshfire.com');
-    driver.getTitle().then(function (title) {
-      expect(title).toEqual('Joshfire');
-      done();
-    });
+    driver.get('http://joshfire.com')
+      .then(function () { return driver.getTitle(); })
+      .then(function (title) { expect(title.toEqual('Joshfire')); })
+      .then(done);
   });
 });
 ```
 
-Please note that Angela ships [version 2.0.0rc5 of Jasmine](http://jasmine.github.io/2.0/introduction.html), which introduces the `done` function in particular to ease authoring of asynchronous tests as well as the possibility to mark tests as `pending`.
+Angela ships [version 2.0.0rc5 of Jasmine](http://jasmine.github.io/2.0/introduction.html), which introduces the `done` function in particular to ease authoring of asynchronous tests as well as the possibility to mark tests as `pending`.
 
-The `driver` instance is the one exposed by the [Selenium's WebDriverJS](https://code.google.com/p/selenium/wiki/WebDriverJs) library. Check its documentation for usage. Note the use of *promises* in particular. The closest thing to a useful documentation of methods you can use is probably [Selenium's Javadoc](http://selenium.googlecode.com/git/docs/api/java/org/openqa/selenium/package-summary.html), starting from the [WebDriver class](http://selenium.googlecode.com/git/docs/api/java/org/openqa/selenium/WebDriver.html#method_summary). Next in line is the [WebDriver W3C Working Draft](http://www.w3.org/TR/webdriver/).
+The `driver` instance is the one exposed by the [Selenium's WebDriverJS](https://code.google.com/p/selenium/wiki/WebDriverJs) library. Check its documentation for usage. In particular, note the use of *promises* and the fact that WebDriverJS manages the underlying control flow for you, allowing you to write scenarios in a synchronous way if you so wish (as in the [Getting started](#getting-started) example) or using promises all the way down as in the above example.
 
-To run that example from the root folder of Angela:
+The closest thing to a useful documentation of methods you can use is [Selenium's Javadoc](http://selenium.googlecode.com/git/docs/api/java/org/openqa/selenium/package-summary.html), starting from the [WebDriver class](http://selenium.googlecode.com/git/docs/api/java/org/openqa/selenium/WebDriver.html#method_summary). Next in line is the [WebDriver W3C Working Draft](http://www.w3.org/TR/webdriver/).
+
+To run the above example from the root folder of Angela:
 
 ```bash
 angela examples/test.spec.js
 ```
 
-Each test must complete within 30 seconds (or 2 minutes if tests are run on an Android device). That setting may be exposed in a future version of the tool if that seems useful.
+Each test must complete within 30 seconds (or 2 minutes if tests are run on an Android device). That setting cannot be changed for the time being but could easily be exposed in a future version of the tool if that seems useful.
 
 
 ### Custom matchers
@@ -214,7 +215,7 @@ angela examples/sweet.spec.js --before examples/matchers.js
 
 ### Unit tests
 
-While Angela is designed to run acceptance tests, note you can also use it to run **unit tests** written with Jasmine. It just seems a bit overkill to use Angela if you **only** have unit tests as the instance of PhantomJS that the tool runs in the background is simply useless for unit tests.
+While Angela is designed to run acceptance tests, you may also use it to run **unit tests** written with Jasmine. It just seems a bit overkill to use Angela if you **only** have unit tests as the instance of PhantomJS that the tool runs in the background is simply useless when unit tests are run.
 
 
 ## Integration with continuous integration servers
@@ -226,7 +227,7 @@ The `--junit` option generates JUnit XML reports in the `junitreports` folder. T
 
 Angela closes everything it can on exit. Set the `--keep` option to tell Angela to keep everything alive as long as you do not hit `Ctrl+C`. This can be useful to continue browsing afterwards, e.g. to detect other things worth testing.
 
-Things can get a bit messy from time to time with WebDriver. WebDriver servers may crash from time to time in particular. If Angela reports weird results and refuses to run again, there may be some server still running in the background. A few commands that may help detect processes that should not be around:
+Things can get a bit messy from time to time with WebDriver as servers sometimes crash for no apparent reason. If Angela reports weird results and refuses to run again, there may be some server still running in the background. A few commands that may help detect processes that should not be around in a Linux based environment:
 
 ```bash
 ps aux | grep adb
