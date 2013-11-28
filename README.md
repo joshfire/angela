@@ -158,12 +158,11 @@ adb install drivers/android-server-2.32.0.apk
 Test files are regular Jasmine spec files. On top of the usual Jasmine functions (`describe`, `it`, `expect`), the spec files can interact with the global `driver` variable to send commands to the running Web browser through WebDriver.
 
 ```javascript
-/*global describe, it, expect, driver*/
 describe('The home page of Joshfire.com', function () {
   it('has the right title "Joshfire"', function (done) {
     driver.get('http://joshfire.com')
       .then(function () { return driver.getTitle(); })
-      .then(function (title) { expect(title.toEqual('Joshfire')); })
+      .then(function (title) { expect(title).toEqual('Joshfire'); })
       .then(done);
   });
 });
