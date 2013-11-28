@@ -11,8 +11,18 @@
   "bin": {
     "angela": "./lib/runner.js"
   },
-  "keywords": [],
-  "license": "",
+  "keywords": [
+    "test",
+    "jasmine",
+    "webdriver",
+    "cli"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/joshfire/angela/LICENSE"
+    }
+  ],
   "engines": {
     "node": "0.10"
   },

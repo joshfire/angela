@@ -29,7 +29,7 @@ Angela sets things up so that you can focus on actually writing tests and not lo
 To install Angela globally with npm:
 
 ```bash
-npm install -g git+ssh://git@github.com:joshfire/angela.git
+npm install angela
 angela --help
 ```
 
@@ -238,7 +238,7 @@ ps aux | grep selenium
 
 ## License
 
-Copyright (c) 2013 Joshfire. All rights reserved.
+Angela is licensed under the [MIT license](LICENSE). Copyright (c) 2013 Joshfire. All rights reserved.
 
 Angela uses great open-source libraries:
 
