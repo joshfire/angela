@@ -2,7 +2,7 @@
  * @fileOverview Shows a basic example of By.css selector usage
  *
  * Run the example with:
- *   angela spec/bycss.spec.js
+ *   angela examples/bycss.spec.js
  */
 /* global describe, it, expect, driver, By */
 describe('The home page of Joshfire.com', function () {

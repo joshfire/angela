@@ -5,7 +5,7 @@
  * suites are executed.
  *
  * For instance:
- *   angela spec/sweet.spec.js --before spec/matchers.js
+ *   angela examples/sweet.spec.js --before examples/matchers.js
  */
 /* global beforeEach, addMatchers */
 beforeEach(function () {

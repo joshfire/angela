@@ -2,11 +2,11 @@
  * @fileOverview Shows a basic example of WebDriverJS usage
  *
  * Run the example with:
- *   angela spec/test.spec.js
+ *   angela examples/test.spec.js
  *
  * If you want to see the execution of the test in a real browser, you may run
  * the example in e.g. Chrome with:
- *   angela spec/test.spec.js --browser chrome
+ *   angela examples/test.spec.js --browser chrome
  */
 /* global describe, it, expect, driver */
 describe('The home page of Joshfire.com', function () {

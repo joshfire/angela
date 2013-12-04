@@ -2,7 +2,7 @@
  * @fileOverview An example of nested "describe".
  *
  * Run the example with:
- *   angela spec/nested.spec.js
+ *   angela examples/nested.spec.js
  */
 /* global describe, it, expect, driver */
 describe('Home page', function () {

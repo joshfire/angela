@@ -29,7 +29,7 @@
  *  Second test of fourth suite runs without beforeEach.
  *
  * Run the example with:
- *   angela spec/flow.spec.js
+ *   angela examples/flow.spec.js
  */
 /* global describe, it, expect, console, beforeEach */
 

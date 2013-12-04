@@ -6,7 +6,7 @@
  * for unit tests.
  *
  * Run the example with:
- *   angela spec/unit.spec.js
+ *   angela examples/unit.spec.js
  */
 /* global describe, it, expect */
 describe('A sync unit test', function () {

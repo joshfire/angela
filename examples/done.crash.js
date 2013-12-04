@@ -9,7 +9,7 @@
  * use of "setTimeout" that resets the call stack.
  *
  * Run example with:
- *   angela spec/async.crash.js
+ *   angela examples/async.crash.js
  */
 /* global describe, it, expect */
 describe('A crash', function () {

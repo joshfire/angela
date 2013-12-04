@@ -6,7 +6,7 @@
  * with an invalid function call otherwise.
  *
  * Run the example with:
- *   angela spec/sweet.spec.js --before spec/matchers.js
+ *   angela examples/sweet.spec.js --before examples/matchers.js
  */
 /* global describe, it, expect */
 describe('A sweet test', function () {
