@@ -29,7 +29,7 @@ Angela sets things up so that you can focus on actually writing tests and not lo
 To install Angela globally with npm:
 
 ```bash
-npm install angela
+npm install -g angela
 angela --help
 ```
 
