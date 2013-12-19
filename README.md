@@ -250,5 +250,6 @@ Angela uses great open-source libraries:
 - [PhantomJS](http://phantomjs.org/). Copyright 2010-2013 Ariya Hidayat. [BSD License](https://github.com/ariya/phantomjs/blob/master/LICENSE.BSD)
 - [npm wrapper for PhantomJS](https://github.com/Obvious/phantomjs). Copyright 2012 The Obvious Corporation. [Apache License 2.0](https://github.com/Obvious/phantomjs/blob/master/LICENSE.txt)
 - [Selenium](https://code.google.com/p/selenium/), including [WebDriverJS](https://code.google.com/p/selenium/wiki/WebDriverJs), licensed under an [Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+- [trycatch](https://github.com/CrabDude/trycatch). Copyright (C) 2011 by Adam Crabtree (dude@noderiety.com). [MIT License](https://raw.github.com/CrabDude/trycatch/master/LICENSE)
 - [walk](https://github.com/coolaj86/node-walk). Copyright (c) 2011 AJ ONeal. [MIT license](http://opensource.org/licenses/mit-license.php)
 - [Woodman](http://joshfire.github.io/woodman/). Copyright (c) 2013 Joshfire, all rights reserved, [MIT licensed](http://joshfire.github.io/woodman/about.html#license)
