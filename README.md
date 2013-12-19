@@ -172,13 +172,13 @@ describe('The home page of Joshfire.com', function () {
 });
 ```
 
-Angela ships [version 2.0.0rc5 of Jasmine](http://jasmine.github.io/2.0/introduction.html), which introduces the `done` function in particular to ease authoring of asynchronous tests as well as the possibility to mark tests as `pending`.
+Angela ships with [version 2.0 of Jasmine](http://jasmine.github.io/2.0/introduction.html), which introduces a [number of changes](https://github.com/pivotal/jasmine/blob/master/release_notes/20.md#breaking-changes) that ease authoring of asynchronous tests in particular.
 
 The `driver` instance is the one exposed by the [Selenium's WebDriverJS](https://code.google.com/p/selenium/wiki/WebDriverJs) library. Check its documentation for usage. In particular, note the use of *promises* and the fact that WebDriverJS manages the underlying control flow for you, allowing you to write scenarios in a synchronous way if you so wish (as in the [Getting started](#getting-started) example) or using promises all the way down as in the above example.
 
 The closest thing to a useful documentation of methods you can use is [Selenium's Javadoc](http://selenium.googlecode.com/git/docs/api/java/org/openqa/selenium/package-summary.html), starting from the [WebDriver class](http://selenium.googlecode.com/git/docs/api/java/org/openqa/selenium/WebDriver.html#method_summary). Next in line is the [WebDriver W3C Working Draft](http://www.w3.org/TR/webdriver/).
 
-To run the above example from the root folder of Angela:
+The `examples` folder contains a number of examples to help you get started. To run the above example from the root folder of Angela:
 
 ```bash
 angela examples/test.spec.js
