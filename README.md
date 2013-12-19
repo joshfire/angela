@@ -103,32 +103,36 @@ Parameters:
                  current working directory.
 
 Options:
-  --browser, -b     Webdriver browser endpoint. The code automatically starts
-                    the "right" Webdriver server based on that setting.
-                    Possible values include "phantomjs", "chrome", "firefox",
-                    "safari", or "android" (provided browser or device is
-                    available on your machine).           [default: "phantomjs"]
-  --before          JS file to "require" before tests are run. Use this option
-                    to add custom matchers or expose additional variables to
-                    the global scope as needed. Code must be synchronous.
-  --after           JS file to "require" after tests have run. Use this option
-                    to run custom code when execution is over. Code must be
-                    synchronous.
-  --host            Webdriver server host                 [default: "localhost"]
-  --port            Webdriver server port                        [default: 8195]
-  --verbose, -v     Trace Angela's execution to the console     [default: false]
-  --serverlog       Log Webdriver server execution to provided log file
+  --browser, -b      Webdriver browser endpoint. The code automatically starts
+                     the "right" Webdriver server based on that setting.
+                     Possible values include "phantomjs", "chrome", "firefox",
+                     "safari", or "android" (provided browser or device is
+                     available on your machine).          [default: "phantomjs"]
+  --before           JS file to "require" before tests are run. Use this option
+                     to add custom matchers or expose additional variables to
+                     the global scope as needed. Code must be synchronous.
+  --after            JS file to "require" after tests have run. Use this option
+                     to run custom code when execution is over. Code must be
+                     synchronous.
+  --host             Webdriver server host                [default: "localhost"]
+  --port             Webdriver server port                       [default: 8195]
+  --verbose, -v      Trace Angela's execution to the console    [default: false]
+  --serverlog        Log Webdriver server execution to provided log file
                                                                    [default: ""]
-  --useserver       Whether to use running Webdriver server or to start one
+  --useserver        Whether to use running Webdriver server or to start one
                                                                 [default: false]
-  --sessionperspec  Angela uses the same browser session throughout by default.
-                    Set the flag to use one browser session per spec. Specs
-                    will run considerably slower.               [default: false]
-  --keep, -k        Whether to keep the browser open when tests are over
+  --printerrorstack  Print stack trace when a test fails because of an
+                     exception. This makes failure reports potentially quite
+                     verbose but can greatly help you track down the origin of
+                     the exception.                             [default: false]
+  --sessionperspec   Angela uses the same browser session throughout by
+                     default. Set the flag to use one browser session per spec.
+                     Specs will run considerably slower.        [default: false]
+  --keep, -k         Whether to keep the browser open when tests are over
                                                                 [default: false]
-  --junit           Create JUnit XML reports (in "junitreports" folder)
+  --junit            Create JUnit XML reports (in "junitreports" folder)
                                                                 [default: false]
-  --help, -h        Displays usage help
+  --help, -h         Displays usage help
 ```
 
 ## Execution
