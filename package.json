@@ -1,6 +1,6 @@
 {
   "name": "angela",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Command-line interface tool to test Web applications from the command-line. The tool runs suites of tests written with Jasmine in some Web browser (Chrome, Firefox, Safari, PhantomJS, Android) using WebDriver.",
   "author": "Joshfire",
   "contributors": [],
