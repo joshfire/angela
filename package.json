@@ -30,6 +30,7 @@
     "selenium-webdriver": "~2.37.0",
     "phantomjs": "~1.9.2-2",
     "optimist": "~0.6.0",
+    "trycatch": "1.0.6",
     "walk": "~2.2.1",
     "woodman": "~0.8.0"
   },
