@@ -172,7 +172,7 @@ describe('The home page of Joshfire.com', function () {
 });
 ```
 
-Angela ships with [version 2.0 of Jasmine](http://jasmine.github.io/2.0/introduction.html), which introduces a [number of changes](https://github.com/pivotal/jasmine/blob/master/release_notes/20.md#breaking-changes) that ease authoring of asynchronous tests in particular.
+Angela ships with [version 2.0 of Jasmine](http://jasmine.github.io/2.0/introduction.html), which introduces a [number of changes](https://github.com/jasmine/jasmine/blob/master/release_notes/20.md#breaking-changes) that ease authoring of asynchronous tests in particular.
 
 The `driver` instance is the one exposed by the [Selenium's WebDriverJS](https://code.google.com/p/selenium/wiki/WebDriverJs) library. Check its documentation for usage. In particular, note the use of *promises* and the fact that WebDriverJS manages the underlying control flow for you, allowing you to write scenarios in a synchronous way if you so wish (as in the [Getting started](#getting-started) example) or using promises all the way down as in the above example.
 
@@ -245,7 +245,7 @@ Angela is licensed under the [MIT license](LICENSE). Copyright (c) 2013 Joshfire
 
 Angela uses great open-source libraries:
 
-- [Jasmine](http://pivotal.github.io/jasmine/). Copyright (c) 2008-2013 Pivotal Labs. [MIT Licensed](https://github.com/pivotal/jasmine/blob/master/MIT.LICENSE).
+- [Jasmine](http://jasmine.github.io/). Copyright (c) 2008-2013 Pivotal Labs. [MIT Licensed](https://github.com/jasmine/jasmine/blob/master/MIT.LICENSE).
 - [optimist](https://github.com/substack/node-optimist). Copyright 2010 James Halliday (mail@substack.net). [MIT/X11 license](https://github.com/substack/node-optimist/blob/master/LICENSE)
 - [PhantomJS](http://phantomjs.org/). Copyright 2010-2013 Ariya Hidayat. [BSD License](https://github.com/ariya/phantomjs/blob/master/LICENSE.BSD)
 - [npm wrapper for PhantomJS](https://github.com/Obvious/phantomjs). Copyright 2012 The Obvious Corporation. [Apache License 2.0](https://github.com/Obvious/phantomjs/blob/master/LICENSE.txt)
